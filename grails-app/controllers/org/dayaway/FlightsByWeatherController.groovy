@@ -2,5 +2,7 @@ package org.dayaway
 
 class FlightsByWeatherController {
 
-    def index() { }
+    def index() {
+        render view:'index'
+    }
 }
