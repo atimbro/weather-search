@@ -2,8 +2,11 @@ package org.dayaway
 
 import grails.converters.JSON
 import groovy.json.JsonSlurper
+import org.dayaway.weather.WeatherService
+
 
 class FlightsByWeatherController {
+    WeatherService weatherService
 
     FlightDataService flightDataService
 

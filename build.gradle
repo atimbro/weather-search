@@ -4,7 +4,10 @@ buildscript {
     }
     repositories {
         mavenLocal()
-        maven { url "https://repo.grails.org/grails/core" }
+        maven {
+            url "https://repo.grails.org/grails/core"
+        }
+
     }
     dependencies {        
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
@@ -40,7 +43,9 @@ assets {
 
 repositories {
     mavenLocal()
-    maven { url "https://repo.grails.org/grails/core" }
+    maven {
+        url "https://repo.grails.org/grails/core"
+    }
 }
 
 dependencyManagement {
@@ -78,6 +83,15 @@ dependencies {
     testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
 
     console "org.grails:grails-console"
+
+    compile "org.grails.plugins:http-builder-helper:1.0.0"
+    compile 'joda-time:joda-time:2.9.1'
+}
+
+bootRun {
+    if ( project.hasProperty('debug') ) {
+        jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=y']
+    }
 }
 
 task wrapper(type: Wrapper) {
