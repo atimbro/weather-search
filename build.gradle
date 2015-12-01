@@ -50,6 +50,12 @@ dependencyManagement {
     applyMavenExclusions false
 }
 
+bootRun {
+    if ( project.hasProperty('debug') ) {
+        jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=y']
+    }
+}
+
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-starter-actuator"
