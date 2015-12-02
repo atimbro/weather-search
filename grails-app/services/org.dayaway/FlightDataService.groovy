@@ -2,11 +2,11 @@ package org.dayaway
 
 class FlightDataService {
 
-    def getFlightResults(String arrivalAirport) {
+    def getFlightResults(String departureAirport, String arrivalAirport, String departureDate, String returnDate) {
 
-        def flightSearchUri= "http://terminal2.expedia.com/x/mflights/search?departureAirport=ORD&departureDate=2015-12-06&returnDate=2015-12-12&childTravelerAge=2&apikey=1gbGDm5WfcDjb5xJlOHYAxwXwdAbCNgb&"
+        def flightSearchUri= "http://terminal2.expedia.com/x/mflights/search?childTravelerAge=2&apikey=1gbGDm5WfcDjb5xJlOHYAxwXwdAbCNgb&"
 
-        flightSearchUri += "arrivalAirport="+arrivalAirport
+        flightSearchUri += "departureAirport="+departureAirport+"&arrivalAirport="+arrivalAirport+"&departureDate="+departureDate+"&returnDate="+returnDate
 
         def flightSearchResponse = new URL(flightSearchUri).getText()
 

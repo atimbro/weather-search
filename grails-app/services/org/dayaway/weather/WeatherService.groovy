@@ -57,7 +57,7 @@ class WeatherService {
         def filteredWeatherObjs = filteredData.collect { e ->
 //            int value = e.weather.id
 
-            new WeatherObj(temp: e.temp.min)
+            new WeatherObj(airportCode: 'MIA', temp: e.temp.min)
         }
         log.info filteredWeatherObjs
 
