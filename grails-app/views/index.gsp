@@ -17,46 +17,47 @@
 		});
 
 		$('#tab-hotel-tab').hover(function() {
-			$('#hotelIcon').attr('src', 'landing_page_files/images/icon/hotels_icon_1.png');
+			$('#hotelIcon').attr('src', '/assets/hotels_icon_1.png');
 		}, function() {
-			$('#hotelIcon').attr('src', 'landing_page_files/images/icon/hotels_icon_0.png');
+			$('#hotelIcon').attr('src', '/assets/hotels_icon_0.png');
 		});
 		
 		$('#tab-package-tab').hover(function() {
-			$('#packageIcon').attr('src', 'landing_page_files/images/icon/flight_hotel_icon_1.png');
+			$('#packageIcon').attr('src', '/assets/flight_hotel_icon_1.png');
 		}, function() {
-			$('#packageIcon').attr('src', 'landing_page_files/images/icon/flight_hotel_icon_0.png');
+			$('#packageIcon').attr('src', '/assets/flight_hotel_icon_0.png');
 		});
 		
 		$('#tab-car-tab').hover(function() {
-			$('#carsIcon').attr('src', 'landing_page_files/images/icon/cars_icon_1.png');
+			$('#carsIcon').attr('src', '/assets/cars_icon_1.png');
 		}, function() {
-			$('#carsIcon').attr('src', 'landing_page_files/images/icon/cars_icon_0.png');
+			$('#carsIcon').attr('src', '/assets/cars_icon_0.png');
 		});
 		
 		$('#tab-cruise-tab').hover(function() {
-			$('#cruisesIcon').attr('src', 'landing_page_files/images/icon/cruises_icon_1.png');
+			$('#cruisesIcon').attr('src', '/assets/cruises_icon_1.png');
 		}, function() {
-			$('#cruisesIcon').attr('src', 'landing_page_files/images/icon/cruises_icon_0.png');
+			$('#cruisesIcon').attr('src', '/assets/cruises_icon_0.png');
 		});
 		
 		$('#tab-activity-tab').hover(function() {
-			$('#thingsToDoIcon').attr('src', 'landing_page_files/images/icon/things-to-do_icon_1.png');
+			$('#thingsToDoIcon').attr('src', '/assets/things-to-do_icon_1.png');
 		}, function() {
-			$('#thingsToDoIcon').attr('src', 'landing_page_files/images/icon/things-to-do_icon_0.png');
+			$('#thingsToDoIcon').attr('src', '/assets/things-to-do_icon_0.png');
 		});
 		
  	});
 </script>
 
-<script src="landing_page_files/ga.js" async="" type="text/javascript"></script>
-<script src="landing_page_files/googleanalytics-min-818825127.js"></script>
-<script src="landing_page_files/app_download_dctk.js"></script>
-<script src="landing_page_files/oo_engine.js"></script>
-<script src="landing_page_files/scratchpad-tray-bundle-min-3595805456.js"></script>
-<script src="landing_page_files/header-bundle-min-2789333842.js"></script>
-<script src="landing_page_files/analytics-core-bundle-min.js"></script>
-<script src="landing_page_files/uitk-jquery-jstemplate-bundle-min.js"></script>
+<asset:javascript src="jquery-1.7.1.min.js"/>
+<asset:javascript src="ga.js"/>
+<asset:javascript src="googleanalytics-min-818825127.js"/>
+<asset:javascript src="app_download_dctk.js"/>
+<asset:javascript src="oo_engine.js"/>
+<asset:javascript src="scratchpad-tray-bundle-min-3595805456.js"/>
+<asset:javascript src="header-bundle-min-2789333842.js"/>
+<asset:javascript src="analytics-core-bundle-min.js"/>
+<asset:javascript src="uitk-jquery-jstemplate-bundle-min.js"/>
 
 <style type="text/css"></style>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -140,9 +141,9 @@
         w.googletag.cmd = w.googletag.cmd || [];
     })(window);
 </script>
-<script src="landing_page_files/gpt.js"></script><iframe style="visibility: hidden; display: none;" src="landing_page_files/container.htm"></iframe>
-<script src="landing_page_files/definitely-ads-here-ad-data-ad-util-lots-of-ads-min-101990289.js"></script><!-- 0 ms -->
-<script src="landing_page_files/dfp-min.js"></script>
+<asset:javascript src="gpt.js"/>
+<asset:javascript src="definitely-ads-here-ad-data-ad-util-lots-of-ads-min-101990289.js"/>
+<asset:javascript src="dfp-min.js"/>
 <script>
     (function(w) {
         w.expads = w.expads || {};
@@ -150,7 +151,7 @@
             w.expads.preinitialize();
         }
     })(window);
-</script><script src="landing_page_files/pubads_impl_52.js" type="text/javascript" async=""></script>
+<asset:javascript src="pubads_impl_52.js"/>
 
 
 
@@ -162,10 +163,10 @@
         { background-color: #f5f5f5; }
     </style>
 
-<script src="landing_page_files/client-logging-bundle-min.js"></script>
+<asset:javascript src="client-logging-bundle-min.js"/>
 
 
-<script src="landing_page_files/core.js"></script>
+<asset:javascript src="core.js"/>
 <script>try{if(window.SS) {SS.PageTimer.time('load', 'pgload'+window.location.pathname);}}catch(e){}</script>
 <script>window.s_exp_siteSpect = '962.22702|990.24520';</script>
 
@@ -201,7 +202,7 @@
         <ul class="utility-nav below726 nav-group cf">
 <li id="shop-menu"> <a aria-expanded="false" id="header-shop-menu" data-tid="header-shop-menu" href="#shop-menu" class="nav-tab" data-control="menu" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ShopHeading'); return false;"> Shop Travel<span class="icon icon-toggle180" aria-hidden="true"></span> </a> <div class="menu"> <ul> <!-- jdbk-test: parameters: shop|home|www.expedia.com - request.serverName: www.expedia.com --> <!-- jdbk-test (shopMenuLinks): domain: www.expedia.com - request.serverName: www.expedia.com --> <li> <a id="sub-menu-header-shop-home" target="_top" href="http://www.expedia.com/?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ExpediaLogo')"> Home </a> </li><li> <a id="sub-menu-header-shop-package" target="_top" href="http://www.expedia.com/Vacation-Packages?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.VacationPackages')"> Vacation Packages </a> </li><li> <a id="sub-menu-header-shop-hotel" target="_top" href="http://www.expedia.com/Hotels?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Hotels')"> Hotels </a> </li><li> <a id="sub-menu-header-shop-car" target="_top" href="http://www.expedia.com/Cars?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Cars')"> Cars </a> </li><li> <a id="sub-menu-header-shop-flight" target="_top" href="http://www.expedia.com/Flights?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Flights')"> Flights </a> </li><li> <a id="sub-menu-header-shop-cruise" target="_top" href="http://www.expedia.com/Cruises?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Cruises')"> Cruises </a> </li><li> <a id="sub-menu-header-shop-activity" target="_top" href="http://www.expedia.com/Activities?v=a" data-onclick="xp.nav.trackAnalytics(this,'a','Header.ThingsToDo')"> Things to Do </a> </li><li> <a id="sub-menu-header-shop-deals" target="_top" href="http://www.expedia.com/Deals" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Deals')"> Deals </a> </li><li> <a id="sub-menu-header-shop-rewards" target="_top" href="http://www.expedia.com/user/expediarewards" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.Rewards')"> Rewards </a> </li><li> <a id="sub-menu-header-shop-mobile" target="_top" href="http://www.expedia.com/app" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MobileApp')"> Mobile: Get Triple Points </a> </li> </ul> </div> </li>        </ul>
         <ul class="shop-nav nav-group cf">
-<li id="utility-menu"> <a aria-expanded="false" id="header-account-menu" data-tid="header-account-menu" href="#utility-menu" class="nav-tab" data-control="menu" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.AccountHeading'); return false;">Account<span class="icon icon-toggle180" aria-hidden="true"><img src="landing_page_files/images/icon/dropDown_icon.png" style="padding-bottom: 4px;"/></span> </a> <div class="menu"> <ul> <li> <a id="header-account-signin" data-tid="header-account-signin" target="_top" href="http://www.expedia.com/user/signin?ckoflag=0" rel="nofollow" data-onclick="appendRedirectionUrl(this); xp.nav.trackAnalytics(this,'a','Header.Signin'); return false;"> Sign In </a> </li> <li> <a id="header-account-register" data-tid="header-account-register" target="_top" href="http://www.expedia.com/user/createaccount?" rel="nofollow" data-onclick="appendRedirectionUrl(this); xp.nav.trackAnalytics(this,'a','Header.CreateAccount'); return false;"> Create an Account </a> </li> </ul> </div> </li>
+<li id="utility-menu"> <a aria-expanded="false" id="header-account-menu" data-tid="header-account-menu" href="#utility-menu" class="nav-tab" data-control="menu" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.AccountHeading'); return false;">Account<span class="icon icon-toggle180" aria-hidden="true"><asset:image src="dropDown_icon.png" style="padding-bottom: 4px;"/></span> </a> <div class="menu"> <ul> <li> <a id="header-account-signin" data-tid="header-account-signin" target="_top" href="http://www.expedia.com/user/signin?ckoflag=0" rel="nofollow" data-onclick="appendRedirectionUrl(this); xp.nav.trackAnalytics(this,'a','Header.Signin'); return false;"> Sign In </a> </li> <li> <a id="header-account-register" data-tid="header-account-register" target="_top" href="http://www.expedia.com/user/createaccount?" rel="nofollow" data-onclick="appendRedirectionUrl(this); xp.nav.trackAnalytics(this,'a','Header.CreateAccount'); return false;"> Create an Account </a> </li> </ul> </div> </li>
 
 <div id="registered-and-identified-user-flag-for-scratchpad" data-identifieduser="false" style="display:none"></div>
 
@@ -211,7 +212,7 @@
         <a aria-expanded="false" data-control="menu" id="header-history" data-tid="header-history" target="_top" href="#" class="nav-tab" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.SP.Tray.Interaction')">My Scratchpad
           <span style="opacity: 1; margin-left: 8px; margin-top: 8px; width: 0px; height: 0px;" class="scratchpad-flare"></span>
           <span id="scratchpad-badge" class="badge badge-urgent badge-secondary badge-notification">3</span>
-        <span class="icon icon-toggle180"><img src="landing_page_files/images/icon/dropDown_icon.png" style="padding-bottom: 4px;"/></span></a>
+        <span class="icon icon-toggle180"><asset:image src="dropDown_icon.png" style="padding-bottom: 4px;"/></span></a>
         <div class="menu double-wide two-column">
           <ul>
 
@@ -375,7 +376,7 @@
     </li>
 
 <li id="utility-link"> <a id="header-itineraries" data-tid="header-itineraries" target="_top" href="http://www.expedia.com/itinerary-list" class="nav-tab" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.MyItineraries'); fillTestOverrideParams()"> My Trips </a> </li><li id="support-menu">
-<a aria-expanded="false" id="header-support-menu" data-tid="header-support-menu" href="#support-menu" class="nav-tab" data-control="menu" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.SupportHeading'); return false;"> Support<span class="icon icon-toggle180" aria-hidden="true"><img src="landing_page_files/images/icon/dropDown_icon.png" style="padding-bottom: 4px;"/></span> </a>  <div class="menu">
+<a aria-expanded="false" id="header-support-menu" data-tid="header-support-menu" href="#support-menu" class="nav-tab" data-control="menu" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.SupportHeading'); return false;"> Support<span class="icon icon-toggle180" aria-hidden="true"><asset:image src="dropDown_icon.png" style="padding-bottom: 4px;"/></span> </a>  <div class="menu">
     <ul>
       <li>
 <a id="header-support-cs" data-tid="header-support-cs" target="_top" href="http://support.expedia.com/" rel="nofollow" data-onclick="xp.nav.trackAnalytics(this,'a','Header.CustSupport')"> Customer Support </a>      </li>
@@ -478,19 +479,19 @@ threePP:"Vacations"
 <ul class="tabs cf col" role="tablist" data-tid="wizard-tablist"> 
 	<li class="tab" role="presentation">
 		<a style="background-color: #0087F5;" role="tab" href="javascript:void(0)" data-tab="flight" data-wizard-action="{&quot;tab&quot; : &quot;flight&quot;, &quot;packages.flight&quot; : false, &quot;packages.hotel&quot; : false, &quot;packages.car&quot; : false, &quot;packages.train&quot; : false }" id="tab-flight-tab" class="on">
-			<div style="height: 28px;"><img id="flightIcon" src="landing_page_files/images/icon/flight_icon_1.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="flightIcon" src="flight_icon_1.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label">Flights</span>
 		</a>
 	</li>
 	<li class="tab" role="presentation">
 		<a role="tab" href="javascript:void(0)" data-tab="hotel" data-wizard-action="{&quot;tab&quot; : &quot;hotel&quot;, &quot;packages.flight&quot; : false, &quot;packages.hotel&quot; : false, &quot;packages.car&quot; : false, &quot;packages.train&quot; : false }" id="tab-hotel-tab" class="" aria-selected="false">
-			<div style="height: 28px;"><img id="hotelIcon" src="landing_page_files/images/icon/hotels_icon_0.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="hotelIcon" src="hotels_icon_0.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label">Hotels <span class="tab-msg" id="hotel-tab-value-prop">Over 325,000 worldwide</span></span>
 		</a>
 	</li> 
 	<li class="tab" role="presentation">
 		<a role="tab" href="javascript:void(0)" data-tab="package" id="tab-package-tab" class="" aria-selected="false">
-			<div style="height: 28px;"><img id="packageIcon" src="landing_page_files/images/icon/flight_hotel_icon_0.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="packageIcon" src="flight_hotel_icon_0.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label"><span class="desktop-only">Package Deals</span>
 			<span class="tablet-only">Flight + Hotel</span></span>
 		</a>
@@ -503,19 +504,19 @@ threePP:"Vacations"
 	</li>
 	<li class="tab" role="presentation">
 		<a style="background-color: rgba(107, 107, 107);" role="tab" href="javascript:void(0)" data-tab="car" data-wizard-action="{&quot;tab&quot; : &quot;car&quot;, &quot;packages.flight&quot; : false, &quot;packages.hotel&quot; : false, &quot;packages.car&quot; : false, &quot;packages.train&quot; : false }" id="tab-car-tab" class="" aria-selected="false">
-			<div style="height: 28px;"><img id="carsIcon" src="landing_page_files/images/icon/cars_icon_0.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="carsIcon" src="cars_icon_0.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label">Cars</span>
 		</a>
 	</li>
 	<li class="tab" role="presentation">
 		<a role="tab" href="javascript:void(0)" data-tab="cruise" data-wizard-action="{&quot;tab&quot; : &quot;cruise&quot;, &quot;packages.flight&quot; : false, &quot;packages.hotel&quot; : false, &quot;packages.car&quot; : false, &quot;packages.train&quot; : false }" id="tab-cruise-tab" class="" aria-selected="false">
-			<div style="height: 28px;"><img id="cruisesIcon" src="landing_page_files/images/icon/cruises_icon_0.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="cruisesIcon" src="cruises_icon_0.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label">Cruises</span>
 		</a>
 	</li>
 	<li class="tab" role="presentation">
 		<a role="tab" href="javascript:void(0)" data-tab="activity" data-wizard-action="{&quot;tab&quot; : &quot;activity&quot;, &quot;packages.flight&quot; : false, &quot;packages.hotel&quot; : false, &quot;packages.car&quot; : false, &quot;packages.train&quot; : false }" id="tab-activity-tab" class="" aria-selected="false">
-			<div style="height: 28px;"><img id="thingsToDoIcon" src="landing_page_files/images/icon/things-to-do_icon_0.png" style="padding-top: 5px;"/></div>
+			<div style="height: 28px;"><asset:image id="thingsToDoIcon" src="things-to-do_icon_0.png" style="padding-top: 5px;"/></div>
 			<span class="tab-label">Things to Do</span>
 		</a>
 	</li>
@@ -537,12 +538,12 @@ threePP:"Vacations"
  		<label class="text icon-before col " id="flight-origin-label">
  			<span class="label">Flying From <span class="visuallyhidden">city or airport</span></span>
  			<input id="flight-origin" name="flight-origin" data-js-theme="typeahead" data-provide="typeahead" aria-autocomplete="list" autocomplete="off" spellcheck="false" aria-expanded="false" data-ta-key="flight_dest" data-wizard-action="{&quot;destination&quot; : &quot;$value1&quot;}" data-autoselect="touch" value="London, England, UK (LON-All Airports)" data-lob="FLIGHTS" placeholder="City or airport" type="text">
- 			<span class="icon icon-location" aria-hidden="true"><img src="landing_page_files/images/icon/location_icon.png" style="padding-bottom: 5px;"/></span>
+ 			<span class="icon icon-location" aria-hidden="true"><asset:image src="location_icon.png" style="padding-bottom: 5px;"/></span>
  		</label>
         <label class="text icon-before col " id="flight-destination-label">
             <span class="label">Flying To <span class="visuallyhidden">city or airport</span></span>
             <input id="flight-destination" name="flight-destination" data-js-theme="typeahead" data-provide="typeahead" aria-autocomplete="list" autocomplete="off" spellcheck="false" aria-expanded="false" data-ta-key="flight_dest" data-wizard-action="{&quot;destination&quot; : &quot;$value1&quot;}" data-autoselect="touch" value="Las Vegas, NV, United States (LAS-All Airports)" data-lob="FLIGHTS" placeholder="City or airport" type="text">
-            <span class="icon icon-location" aria-hidden="true"><img src="landing_page_files/images/icon/location_icon.png" style="padding-bottom: 5px;"/></span>
+            <span class="icon icon-location" aria-hidden="true"><asset:image src="location_icon.png" style="padding-bottom: 5px;"/></span>
         </label>
  	</fieldset>
 
@@ -550,12 +551,12 @@ threePP:"Vacations"
  		<label class="text calendar departing icon-before col " id="flight-departing-label">
  			<span class="label">Arriving <span class="visuallyhidden">date, in mm/dd/yyyy format</span></span>
  			<input type="date" id="flight-departing" name="flight-departing" data-wizard-action="{&quot;startDate&quot; : &quot;$value1&quot;}" class=" " data-end-date="#flight-returning" data-control="calendar" placeholder="mm/dd/yyyy (HHhmm)" data-max-booking-length="330" data-last-valid-date="09/22/2015" data-min-booking-length="0" data-tid="flight-departing" value="11/27/2014 (13h15)" type="text">
- 			<span class="icon icon-calendar" aria-hidden="true"><img src="landing_page_files/images/icon/calendar_icon.png" style="padding-bottom: 5px;"/></span>
+ 			<span class="icon icon-calendar" aria-hidden="true"><asset:image src="calendar_icon.png" style="padding-bottom: 5px;"/></span>
  		</label>
  		<label class="text calendar returning icon-before col " id="flight-returning-label">
  			<span class="label">Departing <span class="visuallyhidden">date, in mm/dd/yyyy format</span></span>
  			<input type="date" id="flight-returning" name="flight-returning" data-wizard-action="{&quot;endDate&quot; : &quot;$value1&quot;}" class=" " data-start-date="#flight-departing" data-control="calendar" placeholder="mm/dd/yyyy (HHhmm)" value="11/29/2014 (16h30)" data-max-booking-length="26" type="text">
- 			<span class="icon icon-calendar" aria-hidden="true"><img src="landing_page_files/images/icon/calendar_icon.png" style="padding-bottom: 5px;"/></span>
+ 			<span class="icon icon-calendar" aria-hidden="true"><asset:image src="calendar_icon.png" style="padding-bottom: 5px;"/></span>
  		</label>
         <!--
  		<div class="flight-passenger-wrapper">
@@ -620,7 +621,7 @@ threePP:"Vacations"
 		<label id="hotel-destination-label" class="text icon-before col">
 			<span class="label">Staying at <span class="visuallyhidden">city or airport</span></span>
 			<input id="hotelInput" type="text" value="Corinthia Hotel London" placeholder="City, airport, landmark, or address" data-lob="HOTELS" data-autoselect="touch" data-wizard-action="{&quot;destination&quot;:&quot;$value1&quot;}" data-ta-key="hotel" aria-expanded="false" spellcheck="false" autocomplete="off" aria-autocomplete="list" data-provide="typeahead" data-js-theme="typeahead" id="hotel-destination" aria-controls="tooltip1414438279141" aria-owns="tooltip1414438279141">
-			<span aria-hidden="true" class="icon icon-location"><img src="landing_page_files/images/icon/location_icon.png" style="padding-bottom: 5px;"/></span>
+			<span aria-hidden="true" class="icon icon-location"><asset:image src="location_icon.png" style="padding-bottom: 5px;"/></span>
 		</label>
 		<label class="col" for="core-wizard-location-select" id="location-select-label">
 			<span class="label"></span>
@@ -656,13 +657,13 @@ threePP:"Vacations"
 
  <!-- .tab-content -->
  <a href="javascript:void(0);" class="wizard-bpg-logo bpg-val-prop cf">
- 	<span class="icon icon-success" aria-hidden="true"><img src="landing_page_files/images/icon/success_icon.png" style="width: 21px; padding-bottom: 4px;"/></span>
+ 	<span class="icon icon-success" aria-hidden="true"><asset:image src="success_icon.png" style="width: 21px; padding-bottom: 4px;"/></span>
  	<strong>Best Price</strong> Guarantee
  </a>
  </div>
  <!-- .search -->
  </div>
- <div data-loaded="true" data-displayed="true" id="COREWIZARD1" class="ad expanded" style="overflow: hidden; width: 260px; max-height: 362px; margin-left: auto; margin-right: auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW1_0__container__"><img height="362" width="260" border="0" src="landing_page_files/images/marriott_ad.png"></div></div><script>
+ <div data-loaded="true" data-displayed="true" id="COREWIZARD1" class="ad expanded" style="overflow: hidden; width: 260px; max-height: 362px; margin-left: auto; margin-right: auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW1_0__container__"><asset:image src="marriott_ad.png" height="362" width="260"/></div></div><script>
 (function(w) { w.expads = w.expads || {}; w.expads.slots = w.expads.slots || {}; w.expads.slots["COREWIZARD1"] = { height : 362, width : 260, path : "/23171577/expedia.us_en/home/all/COREW1", slotTargeting : {"placementId":"COREWIZARD1","cmptst":"5298.0"} }; })(window);</script> ` </section><div data-displayed="true" id="COREWIZARD3" class="ad" style="overflow:hidden;width:912px;max-height:48px;margin-left:auto;margin-right:auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW3_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW3_0" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW3_0" scrolling="no" width="912" frameborder="0" height="48"></iframe></div></div><script>
 (function(w) { w.expads = w.expads || {}; w.expads.slots = w.expads.slots || {}; w.expads.slots["COREWIZARD3"] = { height : 48, width : 912, path : "/23171577/expedia.us_en/home/all/COREW3", slotTargeting : {"placementId":"COREWIZARD3","cmptst":"5298.0"} }; })(window);</script><div data-displayed="true" id="COREWIZARD4" class="ad" style="overflow:hidden;width:678px;max-height:48px;margin-left:auto;margin-right:auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW4_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW4_0" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW4_0" scrolling="no" width="678" frameborder="0" height="48"></iframe></div></div><script>
 (function(w) { w.expads = w.expads || {}; w.expads.slots = w.expads.slots || {}; w.expads.slots["COREWIZARD4"] = { height : 48, width : 678, path : "/23171577/expedia.us_en/home/all/COREW4", slotTargeting : {"placementId":"COREWIZARD4","cmptst":"5298.0"} }; })(window);</script><div data-displayed="true" id="COREWIZARD5" class="ad" style="overflow:hidden;width:552px;max-height:48px;margin-left:auto;margin-right:auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW5_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW5_0" id="google_ads_iframe_/23171577/expedia.us_en/home/all/COREW5_0" scrolling="no" width="552" frameborder="0" height="48"></iframe></div></div><script>
@@ -748,7 +749,7 @@ document.write('<iframe src="http://fls.doubleclick.net/activityi;src=2588797;ty
     <div id="site-footer-wrap" class="site-footer-wrap cols-nested">
 
 <p id="legal" class="legal" style="width: 100%; text-align: center;">
-    Expedia, Inc. is not responsible for content on external Web sites. ©2014 Expedia, Inc. All rights reserved.</p>        </div>
+    Expedia, Inc. is not responsible for content on external Web sites. &copy;2014 Expedia, Inc. All rights reserved.</p>        </div>
     </div>
 
 
