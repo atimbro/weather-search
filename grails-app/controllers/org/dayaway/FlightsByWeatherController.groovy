@@ -16,8 +16,8 @@ class FlightsByWeatherController {
 
         def slurper = new JsonSlurper()
         def overallFlightInfo = [:]
-        locationMap.each { k, v ->
-            v.each {
+        locationMap.entrySet().each { s ->
+            s.getValue().each {
                 def flightData = flightDataService.getFlightResults(it)
                 def result = slurper.parseText(flightData)
                 def legIds = result.offers[0].get("legIds")
@@ -49,7 +49,6 @@ class FlightsByWeatherController {
                 }
                 overallFlightInfo.put(legIds, flightInfo)
             }
-            results.add(result)
         }
 
         render view: 'index'
