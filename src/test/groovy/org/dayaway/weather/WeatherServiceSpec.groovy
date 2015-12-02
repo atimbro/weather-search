@@ -19,6 +19,6 @@ class WeatherServiceSpec extends Specification {
 
         then:
 
-        result.size() == 4
+        result.size() == 1
     }
 }

@@ -17,6 +17,9 @@ class WeatherService {
             "LAX" : "Los Angeles",
             "SFO" : "San Francisco"
     ]
+    public static final OPENWEATHERMAP_URL = "http://api.openweathermap.org"
+    public static final String OPENWEATHERMAP_PATH = "/data/2.5/forecast/daily"
+    public static final String OPENWEATHERMAP_APP_ID = "950caf1d482f8a873ca5dcd54d376529"
 
 
     ApiCaller apiCaller
@@ -29,48 +32,76 @@ class WeatherService {
                 departureDate.toDateTime(midnight),
                 returnDate.plusDays(1).toDateTime(midnight)) // end date is exclusive in Interval so add one day
 
-        def url = "http://api.openweathermap.org"
-        def path = "/data/2.5/forecast/daily"
-
         def allData = [] as List
 
         airportCodes.each {code ->
 
-            def query = [ q: airportToCities[code], cnt: "16", appid: "950caf1d482f8a873ca5dcd54d376529", units: "imperial" ]
+            def query = [ q: airportToCities[code], cnt: "16", appid: OPENWEATHERMAP_APP_ID, units: "imperial" ]
             // Submit a request via GET
-            def response = ApiCaller.getText(url, path, query)
+            def response = ApiCaller.getText(OPENWEATHERMAP_URL, OPENWEATHERMAP_PATH, query)
             def jsonSlurper = new JsonSlurper()
             def jsonResponse = jsonSlurper.parseText(response)
             def currentData = jsonResponse.list as List
 
-            allData.addAll(currentData)
+            List filteredData = currentData.findAll {e ->
+                Long dt = Integer.valueOf(e.dt).longValue() * 1000
+                DateTime dateTime = new DateTime(dt)
+                interval.contains(dateTime)
+            }
+
+            def dailyWeatherList = filteredData.collect { e ->
+                new DailyWeather(
+                        temp: e.temp.min.doubleValue(),
+                        events: e.weather.collect {w -> new WeatherEvent(id: w.id, desc: w.description)}
+                )
+            }
+
+            def weatherObj = new WeatherObj(
+                    airportCode: code,
+                    dailyWeather: dailyWeatherList
+            )
+
+            allData.add(weatherObj)
         }
 
-
-
-        List filteredData = allData.findAll {e ->
-            Long dt = Integer.valueOf(e.dt).longValue() * 1000
-            DateTime dateTime = new DateTime(dt)
-            boolean contains = interval.contains(dateTime)
-            return contains
-        }
-        def filteredWeatherObjs = filteredData.collect { e ->
-//            int value = e.weather.id
-
-            new WeatherObj(airportCode: 'MIA', temp: e.temp.min)
-        }
-        log.info filteredWeatherObjs
-
-        return filteredWeatherObjs
+        return allData
     }
 
-    class WeatherObj {
+    static class WeatherObj {
         String airportCode
-        String temp
-        List<WeatherEvent> events
+        List<DailyWeather> dailyWeather;
+
+        int getExtremeWeatherDays() {
+            dailyWeather.count {dw -> dw.events.findAll{e -> e.id >= 900 && e.id <= 910}}
+        }
+
+        int getSnowDays() {
+            dailyWeather.count {dw -> dw.events.findAll{e -> e.id >= 600 && e.id < 700}}
+        }
+
+        int getThunderstormDays() {
+            dailyWeather.count {dw -> dw.events.findAll{e -> e.id >= 200 && e.id < 300}}
+        }
+
+        int getRainDays() {
+            dailyWeather.count {dw -> dw.events.findAll{e -> e.id >= 500 && e.id < 600}}
+        }
+
+        int getDrizzleDays() {
+            dailyWeather.count {dw -> dw.events.findAll{e -> e.id >= 300 && e.id < 400}}
+        }
+
+        double getLowestTemp() {
+            dailyWeather.min {it.temp}
+        }
     }
 
-    class WeatherEvent {
+    static class DailyWeather {
+        List<WeatherEvent> events
+        double temp
+    }
+
+    static class WeatherEvent {
         String desc
         Integer id
     }
