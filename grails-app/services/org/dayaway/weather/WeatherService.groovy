@@ -65,6 +65,7 @@ class WeatherService {
     }
 
     class WeatherObj {
+        String airportCode
         String temp
         List<WeatherEvent> events
     }
