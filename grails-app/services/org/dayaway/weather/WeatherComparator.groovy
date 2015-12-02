@@ -35,7 +35,7 @@ class WeatherComparator implements Comparator<WeatherService.WeatherObj> {
             1
         }
         else {
-            w1.getLowestTemp().compareTo(w2.getLowestTemp());
+            w1.getLowestTemp().compareTo(w2.getLowestTemp()) * -1;
         }
     }
 }
