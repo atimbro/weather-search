@@ -1,0 +1,236 @@
+
+.polaroid-images a:link, .polaroid-images a:hover {
+	font: 400 3.5em/20% 'Shadows Into Light Two', Helvetica, Sans-serif;
+	color: #333;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.polaroid-images a {
+	background: white;
+	display: inline;
+	float: left;
+	margin: 0 15px 30px;
+	padding: 10px 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
+	transition: all .15s linear;
+	z-index:0;
+	position:relative;
+}
+
+.polaroid-images a:after {
+	color: #333;
+	font-size: 16px;
+	content: attr(title);
+	position: relative;
+	top: 5px;
+}
+
+.polaroid-images img { 
+	display: block; 
+	width: inherit; 
+}
+
+.polaroid-images a:nth-child(2n) {
+	-webkit-transform: rotate(4deg);  
+	-moz-transform: rotate(4deg); 
+	transform: rotate(4deg); 
+}
+
+.polaroid-images a:nth-child(3n) { 
+	-webkit-transform: rotate(-24deg);  
+	-moz-transform: rotate(-24deg); 
+	transform: rotate(-24deg); 
+}
+
+.polaroid-images a:nth-child(4n) {
+	-webkit-transform: rotate(14deg);  
+	-moz-transform: rotate(14deg); 
+	transform: rotate(14deg); 
+}
+
+.polaroid-images a:nth-child(5n) {
+	-webkit-transform: rotate(-18deg);  
+	-moz-transform: rotate(-18deg); 
+	transform: rotate(-18deg); 
+}
+
+.polaroid-images a:hover {
+	-webkit-transform: rotate(0deg); 
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transform: scale(1.2); 
+	-moz-transform: scale(1.2);
+	transform: scale(1.2);
+	z-index:10;
+	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+	-moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
+	box-shadow: 0 10px 20px rgba(0,0,0,.7);
+}
+
+div.polaroidWrapper {
+    /*display: inline-block;*/
+    position: relative;
+    line-height: 0;
+}
+
+img.polaroidChecked {
+	display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+}
+
+div.planningSection {
+	margin: 10px auto 0;
+	width: 98%;
+	height: 100%;
+}
+
+table.planningFlow {
+	width: 100%;
+	height: 100%;
+}
+
+table.debug, td.debug, div.debug, span.debug {
+	border: 1px solid red;
+}
+
+iframe.googleMap {
+	width: 100%;
+	height: 500px;
+	border: 5px solid #000000;
+	display: none;
+}
+
+iframe.googleMap.first {
+	display: inline;
+}
+
+.etabs {
+	margin: 0;
+	padding: 0;
+}
+
+.etab {
+	display: inline-block;
+	zoom: 1;
+	*display:inline;
+	background: #eee;
+	border: solid 1px #999;
+	border-bottom: none;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+}
+
+.etab a {
+	font-size: 14px;
+	line-height: 2em;
+	display: block;
+	padding: 0 10px;
+	outline: none;
+	text-decoration: none;
+}
+
+.etab a:hover {
+	text-decoration: none;
+}
+
+.etab.active {
+	background: #fff;
+	padding-top: 6px;
+	position: relative;
+	top: 1px;
+	border-color: #666;
+}
+
+.etab a.active {
+	font-weight: bold;
+}
+
+div.etab-container div.panel-container {
+	background: #fff;
+	border: solid #666 1px;
+	padding: 10px;
+	-moz-border-radius: 0 4px 4px 4px;
+	-webkit-border-radius: 0 4px 4px 4px;
+}
+
+.etab-container .panel-container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
+    padding: 10px;
+}
+
+div.planningStep {
+	float: left;
+	padding: 10px;
+	text-align: center;
+}
+
+img.imageShadow {
+	border: 1px solid #696969;
+	-moz-box-shadow: 3px 3px 3px 0 #777777;
+	-webkit-box-shadow: 3px 3px 3px 0 #777777;
+	box-shadow: 3px 3px 3px 0 #777777;
+}
+
+img.stepImage {
+	height: 90px;
+}
+
+div.planningStep img:nth-child(1) {
+	cursor: pointer;
+}
+
+img.startPoint {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    border: 1px solid #000000;
+}
+
+span.timeline {
+	padding-top: 5px;
+	color: #2C2C2C;
+    font-family: Roboto,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+span.timeline.left {
+	text-align: left;
+}
+
+span.timeline.center {
+	text-align: center;
+}
+
+span.timeline.right {
+	text-align: right;
+}
+
+img.selectionIndicator {
+	display: none;
+	height: 24px;
+	margin-bottom: -18px;
+}
+
+img.selectionIndicator.first {
+	display: inline;
+}
+
+.geolocation-enabled .origin-destination #flight-destination-label, .geolocation-enabled .origin-destination #package-destination-label, .geolocation-enabled .origin-destination #car-dropoff-label{
+	left: 0!important;
+}
+.theme-inverse-pills{
+	padding-bottom: 19px!important;
+}
