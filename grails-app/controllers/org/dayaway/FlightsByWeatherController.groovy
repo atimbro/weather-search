@@ -15,6 +15,9 @@ class FlightsByWeatherController {
     def index(@RequestParameter("flight-origin") String departureLocation, @RequestParameter("flight-destination") String arrivalLocation, @RequestParameter("flight-departing") String departureDate, @RequestParameter("flight-returning") String returnDate) {
         def locationMap = ['Florida': ['MCO', 'TPA', 'MIA'],
                            'California': ['LAX', 'SFO']]
+
+
+        def originMap = ['chicago': 'ORD', 'seattle': 'SEA']
         def airportCodes = locationMap.get(arrivalLocation)
         def dateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd")
         def depDate = dateTimeFormatter.parseDateTime(departureDate).toLocalDate()
@@ -27,7 +30,7 @@ class FlightsByWeatherController {
         def slurper = new JsonSlurper()
         def overallFlightInfo = [:]
         weatherObjs.each { w ->
-              def flightData = flightDataService.getFlightResults(departureLocation, w.airportCode, departureDate, returnDate)
+              def flightData = flightDataService.getFlightResults(originMap[departureLocation.toLowerCase()], w.airportCode, departureDate, returnDate)
               def result = slurper.parseText(flightData)
               def legIds = result.offers[0].get("legIds")
               def flightInfo = [:]
