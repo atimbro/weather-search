@@ -42,6 +42,7 @@ function getRandomArbitrary(min, max) {
             data    : $form.serialize(),
             success : function( data ) {
             	$("#results-holder").show();
+            	$("#results-holder .panel").not(".toClone").remove()
             	var results = data.content;
             	for (result in results) {
 						    var keys = [];
@@ -56,7 +57,6 @@ function getRandomArbitrary(min, max) {
             		
             		// Variables
             		var totalFare = results[result]['totalFare'];
-            		console.log(results[result]['totalFare'])
             		$newResult.find(".result-totalFare").html(totalFare);
             		
             		var from = results[result][keys[1]][0].departureAirportCode;
@@ -67,6 +67,18 @@ function getRandomArbitrary(min, max) {
    							console.log(returnString)
    							$newResult.find(".result-go").html(goString);
    							$newResult.find(".result-return").html(returnString);
+   							
+   							var weather = results[result][keys[1]].last().weather;
+            		$newResult.find(".weather-info").html('\
+            				<h2 style="margin-bottom:0; color: white">Flying to '+ to +' weather info</h2>\
+						        <ul style="margin-top: 8px;">\
+						        	<li style="padding :0">Temperature: '+weather.temp+'</li>\
+						        	<li style="padding :0">Extreme weather days: '+weather.extremeWeatherDays+'</li>\
+						        	<li style="padding :0">Snow Days: '+weather.snowDays+'</li>\
+						        	<li style="padding :0">Thunderstorm Days: '+weather.thunderstormDays+'</li>\
+						        	<li style="padding :0">Rain Days: '+weather.rainDays+'</li>\
+						        	<li style="padding :0">Drizzle days: '+weather.drizzleDays+'</li>\
+						        </ul>');
             		
             		var goFlightsArr = results[result][keys[1]];
 						    for (var i=0; i<goFlightsArr.length; i++){
@@ -93,7 +105,8 @@ function getRandomArbitrary(min, max) {
                     </tr>');
 						    }
 
-								$newResult.css('background-color', temperatureToColor(getRandomArbitrary(0, 90)))
+								console.log(weather.temp)
+								$newResult.css('background-color', temperatureToColor(weather.temp))
             		$newResult.show()
 
 							}
@@ -880,6 +893,8 @@ threePP:"Vacations"
             <div class="panel-heading">
             		<table class="table">
                     <tr>
+                       <td class="weather-info" width="400" style="color:white; vertical-align: middle; border-top: none" align="left" valign="middle">
+                       </td>
                        <td width="400" style="color:white; vertical-align: middle; border-top: none" align="right" valign="middle">
                         <b style="font-size: 24px">Total fare $<span class="result-totalFare">xxxxxx</span></b>
                        </td>
