@@ -4,112 +4,17 @@
 <asset:javascript src="jquery-1.7.1.min.js"/>
 
 <script type="text/javascript">
-
-if (!Array.prototype.last){
-    Array.prototype.last = function(){
-        return this[this.length - 1];
-    };
-};
-
-function temperatureToColor(far){
-  	var far = parseFloat(far);
-    if (far >= 86.0) return "#A50021";
-    if (far >= 78.8) return "#D82632";
-    if (far >= 71.6) return "#F76D5E";
-    if (far >= 64.4) return "#FFAD72";
-    if (far >= 55.4) return "#FFE099";
-    if (far >= 50) return "#FFFFBF";
-    if (far >= 44.6) return "#E0FFFF";
-    if (far >= 39.2) return "#AAF7FF";
-    if (far >= 33.8) return "#72D9FF";
-    if (far >= 23) return "#3FA0FF";
-    if (far >= 5) return "#264DFF";
-    return "#290AD8";
-}
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
 	
 	$(document).ready(function() {
-	
-		$("form.ajaxForm").on('click', '#search-button', function(e) {  
-				var $form = $(this).closest('form');
-				e.preventDefault();          
-        $.ajax({
-            url     : "/flightsByWeather",
-            type    : "get",
-            dataType: 'json',
-            data    : $form.serialize(),
-            success : function( data ) {
-            	$("#results-holder").show();
-            	var results = data.content;
-            	for (result in results) {
-						    var keys = [];
-						    for (y in results[result]){
-						        keys.push(y)
-						    }
-						    
-						    // Create a new result row
-            		var $newResult = $(".panel.toClone").clone();
-            		$("#results-holder").append($newResult);
-            		$newResult.removeClass("toClone");
-            		
-            		// Variables
-            		var totalFare = results[result]['totalFare'];
-            		console.log(results[result]['totalFare'])
-            		$newResult.find(".result-totalFare").html(totalFare);
-            		
-            		var from = results[result][keys[1]][0].departureAirportCode;
-   							var to = results[result][keys[1]].last().arrivalAirportCode;
-   							var goString = from+" to "+to;
-   							var returnString = to+" to "+from;
-   							console.log(goString)
-   							console.log(returnString)
-   							$newResult.find(".result-go").html(goString);
-   							$newResult.find(".result-return").html(returnString);
-            		
-            		var goFlightsArr = results[result][keys[1]];
-						    for (var i=0; i<goFlightsArr.length; i++){
-						        var flight = goFlightsArr[i];
-						        
-						        $newResult.find(".result-go-routes").append('\
-						        <tr>\
-                        <td width="1" style="color:white;" class="result-airlineAndNumber">'+flight['airlineCode']+' '+flight['flightNumber']+'<br>'+flight['departureAirportCode']+' to '+flight['arrivalAirportCode']+'</td>\
-                        <td width="2" style="color:white;" class="result-departureTime">Departure:<br>'+flight['departureTime']+'</td>\
-                        <td width="2" style="color:white;" class="result-arrivalTime">Arrival:<br>'+flight['arrivalTime']+'</td>\
-                    </tr>');
-						    }
-						    
-						    
-            		var returnFlightsArr = results[result][keys[2]];
-						    for (var i=0; i<returnFlightsArr.length; i++){
-						        var flight = returnFlightsArr[i];
-						        
-						        $newResult.find(".result-return-routes").append('\
-						        <tr>\
-                        <td width="1" style="color:white;" class="result-airlineAndNumber">'+flight['airlineCode']+' '+flight['flightNumber']+'<br>'+flight['departureAirportCode']+' to '+flight['arrivalAirportCode']+'</td>\
-                        <td width="2" style="color:white;" class="result-departureTime">Departure:<br>'+flight['departureTime']+'</td>\
-                        <td width="2" style="color:white;" class="result-arrivalTime">Arrival:<br>'+flight['arrivalTime']+'</td>\
-                    </tr>');
-						    }
-
-								$newResult.css('background-color', temperatureToColor(getRandomArbitrary(0, 90)))
-            		$newResult.show()
-
-							}
-            },
-            error   : function( xhr, err ) {
-            	alert('An error occurred.');     
-            }
-        });    
-        return false;
-    });
 		
 		$(".polaroid-poi").click(function() {
 			$(this).find("img:nth-child(2)").toggle();
 			$("#budget-value").html((Math.ceil(Math.random() * 425) + 50) + "$");
 		});
-
+		
+		$("#search-button").click(function() {
+			window.location.href = "plannedTrip.html";
+		});
 
 		$('#tab-hotel-tab').hover(function() {
 			$('#hotelIcon').attr('src', '/assets/hotels_icon_1.png');
@@ -153,79 +58,6 @@ function getRandomArbitrary(min, max) {
 <asset:javascript src="header-bundle-min-2789333842.js"/>
 <asset:javascript src="analytics-core-bundle-min.js"/>
 <asset:javascript src="uitk-jquery-jstemplate-bundle-min.js"/>
-
-<style type="text/css">
-
-table.result-return-routes,
-table.result-go-routes{
-	font-size: 85%;
-  font-weight: normal;
-  padding-top: 5px;
-}
-
-	.panel {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-	}
-	.panel-heading {
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-	}
-	.panel-title {
-	    margin-top: 0;
-	    margin-bottom: 0;
-	    font-size: 16px;
-	    color: inherit;
-	}
-	.table {
-	    width: 100%;
-	    max-width: 100%;
-	}
-	.panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit;
-	}
-	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-</style>
 
 <style type="text/css"></style>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -693,7 +525,7 @@ threePP:"Vacations"
 <!-- tabs -->
 <span class="hotel-value-prop-tablet" id="hotel-tab-value-prop"> <span>Over 325,000</span> <span>Hotels worldwide</span> </span>
 
-<div class="col forms" data-tid="tab-container"> <form autocomplete="off" class="ajaxForm"> <div class="no-outline" tabindex="-1" data-wizard-action="form-wrapper"><h3 class="sub-600">Search Flights</h3>
+<div class="col forms" data-tid="tab-container"> <form autocomplete="off"> <div class="no-outline" tabindex="-1" data-wizard-action="form-wrapper"><h3 class="sub-600">Search Flights</h3>
 <section class="tab-pane on geolocation-enabled" id="tab-flight" data-tid="wizard-flights"> <div id="flight-tab" class=""> 
  <div id="flight">
  	<!--fieldset class="flight-type-select">
@@ -783,8 +615,6 @@ threePP:"Vacations"
          </fieldset>
      </div>
      <div style="clear: both;"></div>
-     
-
 
     <!--
 	<fieldset class="destination-only location-select-enabled cols-nested">
@@ -809,9 +639,6 @@ threePP:"Vacations"
  </div>
  </div>
  </section>
- 
- 
- 
  </div>
  </form>
  </div>
@@ -871,35 +698,6 @@ threePP:"Vacations"
 <div data-force-load="true" data-loaded="true" data-displayed="true" id="WIZARD" class="ad" style="overflow: hidden; width: 1320px; max-height: 742px; margin-left: auto; margin-right: auto;"><div style="border: 0pt none;" id="google_ads_iframe_/23171577/expedia.us_en/home/all/SKIN_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/23171577/expedia.us_en/home/all/SKIN_0" id="google_ads_iframe_/23171577/expedia.us_en/home/all/SKIN_0" scrolling="no" width="1320" frameborder="0" height="742"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" name="google_ads_iframe_/23171577/expedia.us_en/home/all/SKIN_0__hidden__" id="google_ads_iframe_/23171577/expedia.us_en/home/all/SKIN_0__hidden__" scrolling="no" width="0" frameborder="0" height="0"></iframe></div>
 <script>
 (function(w) { w.expads = w.expads || {}; w.expads.slots = w.expads.slots || {}; w.expads.slots["WIZARD"] = { height : 742, width : 1320, path : "/23171577/expedia.us_en/home/all/SKIN", slotTargeting : {"placementId":"WIZARD"} }; if (typeof(w.expads.displayAdSlot) === "function" && typeof(w.expads.refreshAdSlot) === "function") { w.expads.displayAdSlot("WIZARD"); w.expads.refreshAdSlot("WIZARD"); } })(window);</script>
-</div>
-
-<div class="cols-row">
-     <div id="results-holder" style="margin-top: 30px; margin-bottom: 35px; display: none;">
-     		<h1>Search results:</h1>
-        <div class="panel toClone" style="display: none; width: 100%; color:white;">
-            <div class="panel-heading">
-            		<table class="table">
-                    <tr>
-                       <td width="400" style="color:white; vertical-align: middle; border-top: none" align="right" valign="middle">
-                        <b style="font-size: 24px">Total fare $<span class="result-totalFare">xxxxxx</span></b>
-                       </td>
-                       <td width="100" style="color:white; border-top: none!important; vertical-align: middle;" align="right">
-                       	<button type="button" class="btn btn-success" style="margin:0">
-                       		Select
-                       	</button>
-                       </td>
-                    </tr>
-                </table>
-                <h3 class="panel-title"><span class="result-go"></span><br />
-                <table class="table result-go-routes" style="border-top: 1px solid #ddd; margin-bottom: 10px">
-                </table>
-                <h3 class="panel-title"><span class="result-return"></span><br />
-                <table class="table result-return-routes" style="border-top: 1px solid #ddd;">
-                </table>
-                </h3>
-            </div>
-        </div>
-     </div>
 </div>
 
 <script>
