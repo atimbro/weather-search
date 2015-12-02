@@ -1,7 +1,9 @@
 package org.dayaway
 
+import grails.web.RequestParameter
 import groovy.json.JsonBuilder
 import groovy.json.JsonSlurper
+import org.dayaway.weather.WeatherComparator
 import org.dayaway.weather.WeatherService
 import org.joda.time.format.DateTimeFormat
 
@@ -10,7 +12,7 @@ class FlightsByWeatherController {
 
     FlightDataService flightDataService
 
-    def index(String departureLocation, String arrivalLocation, String departureDate, String returnDate) {
+    def index(@RequestParameter("flight-origin") String departureLocation, @RequestParameter("flight-destination") String arrivalLocation, @RequestParameter("flight-departing") String departureDate, @RequestParameter("flight-returning") String returnDate) {
         def locationMap = ['Florida': ['MCO', 'TPA', 'MIA'],
                            'California': ['LAX', 'SFO']]
         def airportCodes = locationMap.get(arrivalLocation)
@@ -18,12 +20,14 @@ class FlightsByWeatherController {
         def depDate = dateTimeFormatter.parseDateTime(departureDate).toLocalDate()
         def retDate = dateTimeFormatter.parseDateTime(returnDate).toLocalDate()
 
-        def weatherObjs = weatherService.getWeatherData(airportCodes, depDate, retDate)
+        def weatherObjs = weatherService.getWeatherData(airportCodes, depDate, retDate) as List
+
+        weatherObjs.sort(true, new WeatherComparator())
 
         def slurper = new JsonSlurper()
         def overallFlightInfo = [:]
-        weatherObjs.each {
-              def flightData = flightDataService.getFlightResults(departureLocation, it.airportCode, departureDate, returnDate)
+        weatherObjs.each { w ->
+              def flightData = flightDataService.getFlightResults(departureLocation, w.airportCode, departureDate, returnDate)
               def result = slurper.parseText(flightData)
               def legIds = result.offers[0].get("legIds")
               def flightInfo = [:]
@@ -46,6 +50,15 @@ class FlightsByWeatherController {
                               flight.put("departureAirportCode", it.get("departureAirportCode"))
                               flight.put("arrivalTime", it.get("arrivalTime"))
                               flight.put("departureTime", it.get("departureTime"))
+                              flight.put("weather",
+                                      [
+                                              "temp" : w.getLowestTemp(),
+                                              "extremeWeatherDays": w.getExtremeWeatherDays(),
+                                              "snowDays": w.getSnowDays(),
+                                              "thunderstormDays": w.getThunderstormDays(),
+                                              "rainDays": w.getRainDays(),
+                                              "drizzleDays": w.getDrizzleDays()
+                                      ])
                               flights.add(flight)
                           }
                           flightInfo.put(id, flights)

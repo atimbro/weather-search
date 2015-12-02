@@ -92,7 +92,7 @@ class WeatherService {
         }
 
         double getLowestTemp() {
-            dailyWeather.min {it.temp}
+            dailyWeather.collect{it.temp}.min()
         }
     }
 
